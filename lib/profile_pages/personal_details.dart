@@ -24,7 +24,10 @@ class _PersonalDetailsState extends State<PersonalDetails> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('Your personal details'),
+              const Text(
+                'Your personal details',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
               const SizedBox(
                 height: 10,
               ),

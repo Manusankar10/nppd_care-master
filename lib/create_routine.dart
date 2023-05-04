@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nppd_care/update_routine.dart';
 
 class CreateRoutine extends StatefulWidget {
   const CreateRoutine({Key? key}) : super(key: key);
@@ -284,23 +285,32 @@ class _CreateRoutineState extends State<CreateRoutine> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.07,
-                width: MediaQuery.of(context).size.width * 0.9,
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color(0xff1C76E0),
-                      Color(0xff41DA59),
-                    ],
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const UpdateRoutine()),
+                  );
+                },
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.07,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xff1C76E0),
+                        Color(0xff41DA59),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  borderRadius: BorderRadius.circular(20),
+                  child: const Center(
+                      child: Text(
+                    'Update',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  )),
                 ),
-                child: const Center(
-                    child: Text(
-                  'Update',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                )),
               ),
             ),
             const SizedBox(
